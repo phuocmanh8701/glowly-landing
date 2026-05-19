@@ -1,0 +1,504 @@
+@use "../../abstracts/index"as *;
+
+.tf-pin-btn {
+    cursor: pointer;
+    @include transition3;
+    position: relative;
+
+    span {
+        @include flex(center, center);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: white;
+        @include transition3;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border: solid 1px var(--white);
+            border-radius: 50%;
+            @include transition3;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border: solid 1px var(--white);
+            border-radius: 50%;
+            @include transition3;
+            animation-delay: 1s !important;
+        }
+
+        &::before,
+        &::after {
+            animation: ripple-line 2s linear infinite;
+        }
+    }
+
+    &:hover {
+        span {
+            background: #5A42C4;
+            color: var(--white);
+        }
+    }
+}
+
+.tf-pin-btn-2 {
+    cursor: pointer;
+    @include transition3;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+
+    &.style-2 {
+        .ic-wrap {
+            background: #505C1A;
+        }
+    }
+
+    &.style-3 {
+        border: unset;
+        padding: 6px;
+        background: linear-gradient(99.73deg, rgba(38, 34, 25, 0.2304) -24.88%, rgba(38, 34, 25, 0) 140.46%);
+        backdrop-filter: blur(7px);
+        box-shadow: 0px 0px 3.56px 0px #FFFFFF inset;
+
+        .ic-wrap {
+            background: var(--white);
+            position: relative;
+        }
+
+        .icon {
+            font-size: 12px;
+            color: #CFC75D;
+
+        }
+
+        &::before,
+        &::after {
+            inset: 0;
+        }
+
+        &.s3-cl2 {
+            .ic-wrap {
+                background: #FAF7C3;
+            }
+
+            .icon {
+                color: var(--black);
+            }
+        }
+
+
+    }
+
+    .ic-wrap {
+        width: 100%;
+        height: 100%;
+        @include flex(center, center);
+        background: var(--black);
+        border-radius: 50%;
+    }
+
+
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: -4px;
+        right: -4px;
+        bottom: -4px;
+        left: -4px;
+        border: solid 1px var(--white);
+        border-radius: 50%;
+        @include transition3;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: -4px;
+        right: -4px;
+        bottom: -4px;
+        left: -4px;
+        border: solid 1px var(--white);
+        border-radius: 50%;
+        @include transition3;
+        animation-delay: 1s !important;
+    }
+
+    &::before,
+    &::after {
+        animation: ripple-line 2s linear infinite;
+        filter: blur(1px);
+    }
+
+    .icon {
+        font-size: 14px;
+        color: var(--white);
+        @include transition3;
+
+        &.icon-Minus {
+            position: absolute;
+            @include hidden;
+            transform: rotate(-90deg);
+        }
+    }
+
+    &.show {
+        .icon {
+            &.icon-Plus {
+                @include hidden;
+                transform: rotate(90deg);
+            }
+
+            &.icon-Minus {
+                @include visible;
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+
+.banner-lookbook {
+    position: relative;
+
+    .img-banner {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .lookbook-item {
+        position: absolute;
+    }
+
+    &.style-2 {
+        .img-banner {
+            min-height: 300px;
+        }
+    }
+
+    .position1 {
+        top: 56.8%; //
+        left: 36.5%; //
+
+    }
+
+    .position2 {
+        top: 23.5%; //
+        left: 34%; //
+    }
+
+    .position3 {
+        top: 43.8%; //
+        left: 29.7%; //
+    }
+
+    .position4 {
+        top: 60.2%; //
+        left: 39.5%; //
+    }
+
+    .position5 {
+        top: 51.8%; //
+        left: 61.7%; //
+    }
+
+    .position6 {
+        top: 52.4%; //
+        left: 40.5%; //
+    }
+
+    .position7 {
+        top: 59.8%; //
+        left: 15.5%; //
+    }
+
+    .position8 {
+        top: 20.8%; //
+        left: 23.3%; //
+    }
+
+    .position9 {
+        top: 32.5%; //
+        left: 67.1%; //
+    }
+
+    .position10 {
+        top: 75.9%; //
+        left: 57.4%; //
+    }
+
+    .position11 {
+        top: 42.7%;
+        left: 11.9%;
+    }
+
+    .dropdown-menu {
+        border: 0;
+        border-radius: 0px;
+        background-color: transparent;
+        margin: 0px 0px 0px 10px !important;
+        display: flex !important;
+
+        .lookbook-product {
+            @include hidden;
+        }
+
+        &.show {
+            .lookbook-product {
+                transition: opacity 0.3s ease;
+                transition-delay: 0.1s;
+                @include visible;
+            }
+        }
+    }
+
+    .dropdown {
+        &.dropstart {
+            .dropdown-menu {
+                &::after {
+                    content: none;
+                    position: absolute;
+                    right: -7px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 0;
+                    height: 0;
+                    border-top: 10px solid transparent;
+                    border-left: 8px solid var(--white);
+                    border-bottom: 10px solid transparent;
+                }
+            }
+        }
+
+        &.dropend {
+            .dropdown-menu {
+                &::after {
+                    content: none;
+                    position: absolute;
+                    left: -7px !important;
+                    right: unset !important;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 0;
+                    height: 0;
+                    border-top: 10px solid transparent;
+                    border-right: 8px solid var(--white) !important;
+                    border-bottom: 10px solid transparent;
+                    border-left: unset !important;
+                }
+            }
+        }
+
+        &.dropup {
+            .dropdown-menu {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .content-abs {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    @include res(md, min) {
+        .lookbook-product {
+            margin: -42px 0px;
+
+            &.style-3 {
+                margin: -60px 0px;
+            }
+        }
+
+        .dropdown-menu {
+            z-index: 99;
+        }
+
+        .dropdown-menu {
+            margin: 0px 10px 0px 10px !important;
+        }
+    }
+
+    @include res(xl, min) {
+        .content-abs {
+            bottom: 40px;
+            left: 40px;
+        }
+    }
+
+    @include res(md) {
+        .dropdown-menu {
+            &::after {
+                display: none !important;
+            }
+        }
+
+        .content-abs {
+            display: none;
+        }
+
+        .lookbook-product {
+            @include transition3;
+            border-radius: 0;
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            position: fixed !important;
+            top: 0 !important;
+            bottom: 0 !important;
+            right: 0 !important;
+            left: 0 !important;
+            transform: unset !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            display: flex;
+            align-items: end;
+            @include hidden;
+            @include transition3;
+            background: rgba(0, 0, 0, 0.5);
+
+            &.show {
+                @include visible;
+            }
+        }
+    }
+}
+
+.lookbook-product {
+    padding: 12px;
+    min-width: 418px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
+    .prd__name {
+        margin-bottom: 6px;
+    }
+
+    .prd-image {
+        max-width: 74px;
+        border-radius: 6px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: calc(74/88);
+        }
+    }
+
+    .prd-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    &.style-2 {
+        padding: 4px;
+        padding-right: 12px;
+        gap: 12px;
+        min-width: 308px;
+
+        .prd-image {
+            max-width: 80px;
+
+            img {
+                aspect-ratio: calc(80/96);
+            }
+        }
+    }
+
+    &.style-3 {
+        padding: 8px;
+        padding-right: 24px;
+        gap: 16px;
+        background: var(--black);
+        box-shadow: 0 0px 10px rgba(255, 255, 255, 0.5);
+
+        .prd-image {
+            max-width: 120px;
+
+            img {
+                aspect-ratio: 1;
+            }
+        }
+
+        .prd__desc {
+            margin-bottom: 12px;
+        }
+    }
+
+    &.style-4 {
+        min-width: 320px;
+        padding: 8px;
+
+        .prd-image {
+            max-width: 105px;
+
+            img {
+                aspect-ratio: calc(105/126);
+            }
+        }
+
+        .price-wrap {
+            margin-bottom: 12px;
+        }
+
+        .prd_info {
+            display: grid;
+            place-items: start;
+        }
+    }
+
+    @include res(md) {
+        min-width: max-content;
+        gap: 12px;
+
+        .image {
+            max-width: 80px;
+        }
+    }
+
+    @include res(lg) {
+        min-width: 300px;
+    }
+
+    @include res(sm) {
+        box-shadow: unset;
+    }
+
+    @include res(md, min) {
+        &.style-3 {
+            background: linear-gradient(99.73deg, rgba(38, 34, 25, 0.2304) -24.88%, rgba(38, 34, 25, 0) 140.46%);
+            backdrop-filter: blur(8px);
+            box-shadow: 0px 0px 4px 0px #FFFFFF inset;
+            min-width: unset;
+            width: max-content;
+        }
+    }
+}

@@ -1,0 +1,453 @@
+@use "../../abstracts/index"as *;
+
+.sw-pg-thumb {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .swiper-pagination-bullet {
+        margin: 0 !important;
+        width: 40px;
+        border-radius: 0;
+        height: 4px;
+        background-color: var(--white);
+        @include transition3;
+        position: relative;
+
+        &:not(.swiper-pagination-bullet-active) {
+            opacity: 0.3;
+            width: 24px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: calc(100% + 30px);
+            width: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+
+.testimonial-v01 {
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+    .tes-tag,
+    .tes-text {
+        margin-bottom: 48px;
+    }
+
+    .tes-avt {
+        margin-bottom: 24px;
+        padding: 2px;
+        border: 1px solid var(--black);
+        border-radius: 50%;
+        max-width: 64px;
+
+        img {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .tes-author {
+        margin-bottom: 8px;
+    }
+
+    @include res(xl) {
+
+        .tes-tag,
+        .tes-text {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.testimonial-v02 {
+    padding: 24px;
+    background: var(--white);
+    border-radius: 8px;
+    display: flex;
+    gap: 24px;
+
+    .tes-image {
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .tes-content {
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .tes_rate {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .tes_prd {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: auto;
+
+        .ic-wrap {
+            @include flex(center, center);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            font-size: 20px;
+        }
+    }
+
+    @include res(md, min) {
+        .tes-image {
+            width: calc(40% - 12px);
+        }
+
+        .tes-content {
+            width: calc(60% - 12px);
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+    }
+
+    @include res(xl, min) {
+        gap: 48px;
+
+        .tes-image {
+            width: 35.201149425287356%;
+        }
+
+        .tes-content {
+            width: 59.62643678160919%;
+        }
+    }
+
+    @include res(md) {
+        padding: 20px 15px;
+    }
+
+    @include res(md) {
+        flex-direction: column;
+
+        .tes-image {
+            img {
+                max-height: 350px;
+            }
+        }
+
+        .tes-content {
+            gap: 16px;
+        }
+    }
+}
+
+.testimonial-v03 {
+    padding: 40px;
+    background: var(--bg-2);
+    border-radius: 8px;
+
+    .star-wrap {
+        color: var(--text-10);
+    }
+
+    .tes_rate {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .tes_prd {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        .ic-wrap {
+            @include flex(center, center);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--bg-11);
+        }
+    }
+
+    .tes_rate,
+    .tes_text,
+    .tes_author {
+        margin-bottom: 24px;
+    }
+
+    .tes_author {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+    }
+
+    @include res(lg, min) {
+        .tes_author {
+            margin-bottom: 48px;
+        }
+    }
+
+    @include res(xl) {
+        padding: 30px;
+    }
+
+    @include res(md) {
+        padding: 20px;
+    }
+}
+
+.testimonial-v04 {
+    display: flex;
+    flex-direction: column;
+
+    .star-wrap {
+        color: #E6A120;
+    }
+
+    .tes-rate {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .tes-text {
+        margin-bottom: 24px;
+    }
+
+    .tes-author {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: auto;
+
+        .author_image {
+            border-radius: 50%;
+            overflow: hidden;
+
+        }
+
+        .info__name {
+            margin-bottom: 2px;
+        }
+    }
+
+    @include res(lg, min) {
+        .tes-text {
+            margin-bottom: 48px;
+        }
+    }
+}
+
+.testimonial-v05 {
+    background: var(--bg-2);
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    @include transition3;
+
+    .tes-icon {
+        display: flex;
+        font-size: 40px;
+        margin-bottom: 64px;
+    }
+
+    .tes-title {
+        margin-bottom: 16px;
+    }
+
+    .tes-text {
+        margin-bottom: 16px;
+        color: var(--text-5);
+    }
+
+    .tes-author {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .author-image {
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .tes-icon,
+    .author-name,
+    .tes-title,
+    .tes-text {
+        @include transition3;
+    }
+
+    &:hover {
+        background: var(--black);
+
+        .tes-icon,
+        .author-name,
+        .tes-title {
+            color: var(--white);
+        }
+
+        .tes-text {
+            color: var(--text-6);
+        }
+    }
+
+    @include res(xl) {
+        padding: 30px;
+
+        .tes-icon {
+            margin-bottom: 32px;
+        }
+    }
+
+    @include res(md) {
+        padding: 20px;
+
+        .tes-icon {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.testimonial-v6 {
+    position: relative;
+
+    .tes-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 48px;
+        height: 100%;
+    }
+
+    .star-wrap {
+        color: var(--warning_400);
+    }
+
+    .tes_rate {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .tes_text {
+        padding-left: 24px;
+        border-left: 2px solid var(--orange_500);
+    }
+
+    .tes_product {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .prd_image {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .prd_infor {
+            display: grid;
+            gap: 4px;
+        }
+
+        .prd_action {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--line-5);
+            @include flex(center, center);
+            flex-shrink: 0;
+
+            &:hover {
+                color: var(--white);
+                border-color: var(--black);
+                background: var(--black);
+            }
+        }
+    }
+
+    .tes-media {
+        padding: 24px;
+        border-left: 1px solid var(--line-5);
+        border-right: 1px solid var(--line-5);
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        .image-compare {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    }
+
+    @include res(xl, min) {
+        .tes_product {
+            .prd_action {
+                margin-left: 8px;
+            }
+        }
+    }
+
+    @include res(xxl, min) {
+        .tes-media {
+            margin-left: -17px;
+        }
+    }
+
+
+
+    @include res(xl) {
+        .tes-content {
+            padding-top: 24px;
+            padding-bottom: 24px;
+            gap: 30px;
+        }
+
+        .tes_text {
+            padding-left: 13px;
+        }
+    }
+
+    @include res(lg) {
+        .tes-content {
+            gap: 24px;
+        }
+    }
+
+    @include res(md) {
+        .tes-media {
+            border-bottom: 1px solid var(--line-5);
+            padding: 20px 15px;
+        }
+
+        .tes-content {
+            border-left: 1px solid var(--line-5);
+            border-right: 1px solid var(--line-5);
+            padding: 20px 15px;
+        }
+    }
+}

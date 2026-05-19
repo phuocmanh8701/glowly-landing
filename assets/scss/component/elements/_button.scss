@@ -1,0 +1,680 @@
+@use "../../abstracts/index"as *;
+
+.btn {
+    --bs-btn-font-size: inherit;
+}
+
+.tf-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    font-weight: 400;
+    text-transform: uppercase;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: var(--black);
+    color: var(--white);
+    border-radius: 8px;
+    @include transition3;
+
+    .icon {
+        font-size: 20px;
+    }
+
+    &:hover {
+        background: var(--main_800);
+    }
+
+    &.style-2 {
+        border-radius: 999px;
+    }
+
+    &.btn-white {
+        &:not(:hover) {
+            background: var(--white);
+            color: var(--black);
+        }
+    }
+
+    &.btn-light {
+        &:not(:hover) {
+            background: var(--bg-2);
+            color: var(--black);
+        }
+    }
+
+    &.btn-light-2 {
+        &:not(:hover) {
+            background: var(--bg-5);
+            color: var(--black);
+        }
+    }
+
+    &.btn-stroke {
+        border: 1px solid var(--text-3);
+        color: var(--text-3);
+        background: transparent;
+
+        &:hover {
+            background: var(--text-3);
+            color: var(--black);
+        }
+    }
+
+    &.btn-stroke-2 {
+        border: 1px solid var(--line-5);
+        background: transparent;
+        color: var(--black);
+
+        &:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+    }
+
+    &.btn-stroke-black {
+        border: 1px solid var(--black);
+        background: var(--black);
+
+        &:not(:hover) {
+            background: transparent;
+            color: var(--black);
+        }
+    }
+
+    &.btn-stroke-white {
+        border: 1px solid var(--white);
+        background: transparent;
+
+        &:hover {
+            color: var(--black);
+            background: var(--white);
+        }
+    }
+
+    &.btn-trans {
+        &:not(:hover) {
+            background: transparent;
+            color: var(--black);
+        }
+    }
+
+    &.btn-fill-2 {
+        &:not(:hover) {
+            background: var(--bg-10);
+        }
+    }
+
+    &.hv-black {
+        &:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+    }
+
+    &.btn-out {
+        background: #A1A1A1;
+        color: var(--white);
+        pointer-events: none;
+    }
+
+    &.btn-fill {
+        &:not(:hover) {
+            background: var(--text-3);
+            color: var(--black);
+        }
+    }
+
+    &.type-3 {
+        height: 32px;
+    }
+
+    &.type-4 {
+        height: 40px;
+
+        .ic-wrap {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &.w-100 {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    &.py-normal {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    &.btn-v2 {
+        padding-right: 4px;
+
+        .ic-wrap {
+            width: 32px;
+            height: 32px;
+            @include flex(center, center);
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            @include transition3;
+        }
+
+        &.stroke {
+            justify-content: space-between;
+            border: 1px solid var(--black);
+        }
+
+        &.small {
+            height: 40px;
+            padding-right: 4px;
+            padding-left: 15px;
+
+            .ic-wrap {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        &:hover {
+            background: #000;
+
+            .ic-wrap {
+                background: var(--white);
+                color: black;
+            }
+        }
+
+        &.btn-v2_hv2 {
+            &:hover {
+                background: var(--main_800);
+            }
+        }
+    }
+
+    @include res(lg, min) {
+        &.btn-v2 {
+            &.ps-space-1 {
+                padding-left: 24px;
+            }
+        }
+
+        &.type-3 {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    @include res(xl, min) {
+        height: 56px;
+        padding-left: 32px;
+        padding-right: 32px;
+
+        &.btn-v2 {
+            .ic-wrap {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        &.style-3 {
+            border-radius: 100%;
+            min-width: 200px;
+        }
+
+        &.type-2 {
+            height: 48px;
+        }
+
+        &.btn-fill-2 {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+}
+
+
+.animate-btn {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        &::after {
+            animation: shine-reverse 1s forwards;
+        }
+    }
+
+    &.w-100 {
+        &:hover {
+            &::after {
+                animation: shine-reverse 1.5s forwards;
+            }
+        }
+    }
+}
+
+.animate-btn:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0) 70%);
+    top: 0;
+    left: -100%;
+    opacity: 0.6;
+}
+
+button.animate-btn::after,
+.animate-btn.tf-btn::after {
+    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0) 20%, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0) 70%);
+}
+
+.animate-btn.animate-dark::after {
+    background-image: linear-gradient(90deg, transparent, rgb(0 0 0 /0.5), transparent);
+}
+
+.animate-btn.animate-primary::after {
+    background-image: linear-gradient(90deg, transparent, rgb(220, 70, 70), transparent);
+}
+
+
+.tf-loading {
+    min-width: 150px;
+
+    &.loadmore {
+        .spinner-circle {
+            display: none;
+        }
+
+        &.loading {
+            .spinner-circle {
+                display: block;
+            }
+
+            .text {
+                display: none;
+            }
+        }
+
+        &:hover {
+            .spinner-child {
+                &::before {
+                    background-color: var(--white);
+                }
+            }
+        }
+
+        .spinner-child {
+            &::before {
+                background-color: var(--bg);
+                @include transition3;
+            }
+        }
+    }
+
+    @include res(xl) {
+        min-width: 130px;
+    }
+}
+
+
+.spinner-circle {
+    width: 24px;
+    height: 24px;
+    position: relative;
+
+    .spinner-child {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            margin: 0 auto;
+            width: 20%;
+            height: 20%;
+            background-color: var(--white);
+            border-radius: 100%;
+            -webkit-animation: spinner-circleBounceDelay 1s infinite ease-in-out both;
+            animation: spinner-circleBounceDelay 1s infinite ease-in-out both;
+        }
+    }
+
+    .spinner-circle2 {
+        -webkit-transform: rotate(40deg);
+        -ms-transform: rotate(40deg);
+        transform: rotate(40deg);
+
+        &::before {
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+        }
+    }
+
+    .spinner-circle3 {
+        -webkit-transform: rotate(80deg);
+        -ms-transform: rotate(80deg);
+        transform: rotate(80deg);
+
+        &::before {
+            -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+        }
+    }
+
+    .spinner-circle4 {
+        -webkit-transform: rotate(120deg);
+        -ms-transform: rotate(120deg);
+        transform: rotate(120deg);
+
+        &::before {
+            -webkit-animation-delay: -0.7s;
+            animation-delay: -0.7s;
+        }
+    }
+
+    .spinner-circle5 {
+        -webkit-transform: rotate(160deg);
+        -ms-transform: rotate(160deg);
+        transform: rotate(160deg);
+
+        &::before {
+            -webkit-animation-delay: -0.6s;
+            animation-delay: -0.6s;
+        }
+    }
+
+    .spinner-circle6 {
+        -webkit-transform: rotate(200deg);
+        -ms-transform: rotate(200deg);
+        transform: rotate(200deg);
+
+        &::before {
+            -webkit-animation-delay: -0.5s;
+            animation-delay: -0.5s;
+        }
+    }
+
+    .spinner-circle7 {
+        -webkit-transform: rotate(240deg);
+        -ms-transform: rotate(240deg);
+        transform: rotate(240deg);
+
+        &::before {
+            -webkit-animation-delay: -0.4s;
+            animation-delay: -0.4s;
+        }
+    }
+
+    .spinner-circle8 {
+        -webkit-transform: rotate(280deg);
+        -ms-transform: rotate(280deg);
+        transform: rotate(280deg);
+
+        &::before {
+            -webkit-animation-delay: -0.3s;
+            animation-delay: -0.3s;
+        }
+    }
+
+    .spinner-circle9 {
+        -webkit-transform: rotate(320deg);
+        -ms-transform: rotate(320deg);
+        transform: rotate(320deg);
+
+        &::before {
+            -webkit-animation-delay: -0.2s;
+            animation-delay: -0.2s;
+        }
+    }
+}
+
+
+.tf-btn-line {
+    color: var(--black);
+    position: relative;
+    @include transition3;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    margin-bottom: 1px;
+
+    &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        right: auto;
+        bottom: 0px;
+        width: 100%;
+        height: 1px;
+        background-color: var(--black);
+        @include transition3;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: auto;
+        right: 0;
+        bottom: 0px;
+        width: 0%;
+        height: 1px;
+        background-color: var(--black);
+        @include transition3;
+    }
+
+    &.style-min {
+
+        &::after,
+        &::before {
+            height: 1px;
+        }
+    }
+
+    &.style-white {
+        color: var(--white);
+
+        &::after,
+        &::before {
+            background-color: var(--white);
+        }
+    }
+
+    &.style-purple {
+        color: var(--bg-10);
+
+        &::after {
+            background-color: var(--bg-10);
+        }
+
+        &::before {
+            background: var(--bg-10);
+        }
+    }
+
+    &:hover {
+
+        &::before {
+            right: auto;
+            left: 0;
+            width: 100%;
+            transition-delay: 0.3s;
+        }
+
+        &::after {
+            right: 0;
+            left: auto;
+            width: 0%;
+        }
+    }
+
+    &.active {
+        background-position: left;
+
+        &::before {
+            width: 100%;
+        }
+
+    }
+}
+
+.tf-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    position: relative;
+
+    .icon {
+        font-size: 20px;
+    }
+
+    &.text-white,
+    &.line-white {
+        &::before {
+            background: var(--white);
+        }
+    }
+
+    &.cl-text-3 {
+        &::before {
+            background: var(--text-3);
+        }
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: auto;
+        right: 0;
+        bottom: 0px;
+        width: 0%;
+        height: 1px;
+        background-color: var(--black);
+        @include transition3;
+    }
+
+    &:hover {
+        &::before {
+            right: auto;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+
+.tf-btn-rounded {
+    width: 32px;
+    height: 32px;
+    @include flex(center, center);
+    background: var(--white);
+    box-shadow: 0px 24px 24px -12px var(--elevationshadow),
+        0px 3px 3px -1.5px var(--elevationshadow),
+        0px 1px 1px -0.5px var(--elevationshadow);
+    border-radius: 50%;
+
+    &.style-2 {
+        border: 1px solid var(--line-5);
+        box-sizing: unset;
+
+        &:hover {
+            border-color: var(--black);
+        }
+    }
+
+    &:hover {
+        background: var(--black);
+        color: var(--white);
+    }
+
+    &.style-black {
+        background: var(--black);
+        border-color: var(--black);
+        color: var(--white);
+
+        &:hover {
+            box-shadow: var(--shadow);
+        }
+    }
+
+    &.stroke {
+        border: 1px solid var(--black);
+    }
+
+    @include res(xl, min) {
+        &.size-2 {
+            width: 40px;
+            height: 40px;
+
+            .icon {
+                font-size: 20px;
+            }
+        }
+
+        &.style-3 {
+            width: 48px;
+            height: 48px;
+
+            .icon {
+                font-size: 20px;
+            }
+        }
+
+        &.size-xl {
+            width: 40px;
+            height: 40px;
+
+            .icon {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+
+.tf-btn-video {
+    &.btn-abs {
+        position: relative;
+        @include flex(center, center);
+
+        &::after {
+            position: absolute;
+            content: "";
+            inset: 0;
+            background-color: #0000004D;
+            z-index: 1;
+        }
+
+        .icon {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--white);
+            font-size: 20px;
+            color: var(--black);
+            z-index: 2;
+        }
+    }
+}
+
+.tf-btn-normal {
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    font-weight: 400;
+}

@@ -1,0 +1,39 @@
+/*------------ Layout ---------------- */
+@forward "layout/layout";
+
+/*------------ Header ---------------- */
+@forward "header/header";
+@forward "header/topbar";
+
+/*------------ Blog ---------------- */
+@forward "blog/blog";
+
+/*------------ Element ---------------- */
+@forward "elements/animation";
+@forward "elements/hover";
+@forward "elements/box-icon";
+@forward "elements/pop-up";
+@forward "elements/tabs";
+@forward "elements/form";
+@forward "elements/button";
+@forward "elements/slider";
+@forward "elements/testimonial";
+@forward "elements/nice-select";
+@forward "elements/zoom";
+@forward "elements/accordion";
+@forward "elements/account";
+@forward "elements/lookbook";
+@forward "elements/widget";
+@forward "elements/section";
+@forward "elements/gsap";
+
+/*------------ Shop ---------------- */
+@forward "shop/shop";
+@forward "shop/product";
+@forward "shop/cart";
+
+/*------------ Footer ---------------- */
+@forward "footer/footer";
+
+/*------------ Landing ---------------- */
+@forward "landing/landing";

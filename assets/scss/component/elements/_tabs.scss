@@ -1,0 +1,435 @@
+@use "../../abstracts/index"as *;
+
+.flat-animate-tab {
+    overflow: hidden;
+
+    .tab-content {
+        position: relative;
+    }
+
+    .tab-pane {
+        display: block;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        -webkit-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        transform: translateY(30px);
+        transition-timing-function: ease-in;
+        transition-duration: 0.2s;
+
+        &.active {
+            pointer-events: auto;
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            z-index: 2;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            transition-timing-function: ease-out;
+            transition-duration: 0.3s;
+            transition-delay: 0.3s;
+        }
+    }
+
+    &.fade-to-right {
+        .tab-pane {
+            &:not(.active) {
+                -webkit-transform: translateX(30px);
+                -ms-transform: translateX(30px);
+                transform: translateX(30px);
+            }
+        }
+    }
+}
+
+.flat-animate-tab-2 {
+    overflow: hidden;
+
+    .tab-content {
+        position: relative;
+    }
+
+    .tab-pane {
+        display: block;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition-timing-function: ease-in;
+        transition-duration: 0.2s;
+
+        &.active {
+            pointer-events: auto;
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            z-index: 2;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            transition-timing-function: ease-out;
+            transition-duration: 0.3s;
+            transition-delay: 0.3s;
+        }
+    }
+}
+
+
+.tab-btn-wrap-v1 {
+    display: flex;
+    gap: 32px;
+    position: relative;
+    margin-bottom: 28px;
+    overflow: auto;
+    white-space: nowrap;
+
+    .nav-tab-item {
+        position: relative;
+        z-index: 1;
+
+        &:last-child {
+            padding-right: 2px;
+        }
+    }
+
+    .tf-btn-tab {
+        padding-bottom: 13px;
+        border-bottom: 2px solid var(--black);
+
+        &:not(.active) {
+            color: var(--text-2);
+            border-color: transparent;
+        }
+    }
+
+    @include res(xxl, min) {
+        gap: 64px;
+        margin-bottom: 40px;
+
+        .tf-btn-tab {
+            padding-bottom: 23px;
+        }
+    }
+}
+
+.tab-btn-wrap-v2 {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    overflow: auto;
+    white-space: nowrap;
+
+    .tf-btn-tab {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: auto;
+            right: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--black);
+            @include transition3;
+        }
+
+        &.active {
+            &::before {
+                right: auto;
+                left: 0;
+                width: 100%;
+            }
+        }
+        &:not(.active){
+            color: var(--text-6);
+        }
+    }
+
+    @include res(xl, min) {
+        gap: 48px;
+    }
+}
+
+.list-tab-btn-vertical {
+    .tf-btn-tab {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--line-5);
+        gap: 8px;
+
+        &.active {
+            border-color: var(--black);
+        }
+
+        &:not(.active) {
+            color: var(--text-5);
+        }
+    }
+
+    .nav-tab-item {
+        &:not(:first-child) {
+            .tf-btn-tab {
+                padding-top: 24px;
+            }
+        }
+    }
+
+    @include res(lg, min) {
+        max-width: 324px;
+        width: 100%;
+    }
+
+    @include res(lg) {
+        display: flex;
+        gap: 24px;
+        overflow: auto;
+        white-space: nowrap;
+
+        .nav-tab-item {
+            .tf-btn-tab {
+                padding-top: 0 !important;
+                padding-bottom: 12px !important;
+            }
+        }
+    }
+}
+
+
+.list-tab-btn-1 {
+    display: flex;
+    gap: 24px;
+
+    .tf-btn-tab {
+        font-weight: 400;
+        color: var(--text-2);
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: auto;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            width: 0;
+            background: var(--black);
+            @include transition3;
+        }
+
+        &.active {
+            color: var(--black);
+
+            &::before {
+                width: 100%;
+                left: 0;
+                right: auto;
+            }
+        }
+
+        &:hover {
+            color: var(--black);
+        }
+    }
+
+    &.style-3 {
+        .tf-btn-tab {
+            font-weight: 500;
+            padding-bottom: 6px;
+            gap: 8px;
+
+            &:not(.active) {
+                color: var(--black_32);
+            }
+
+            &::before {
+                height: 2px;
+            }
+        }
+    }
+
+    @include res(xl, min) {
+        &.style-2 {
+            gap: 40px;
+
+            .tf-btn-tab {
+                padding-bottom: 6px;
+
+                &::before {
+                    height: 2px;
+                }
+
+                &.active {
+                    font-weight: 700;
+                }
+            }
+        }
+
+        &.style-3 {
+            gap: 48px;
+        }
+    }
+}
+
+.list-tab-btn-2 {
+    display: flex;
+    gap: 12px;
+    overflow: auto;
+
+    .tf-btn-tab {
+        height: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 99px;
+        border: 1px solid var(--line-5);
+        @include flex(center, center);
+
+        &:hover {
+            border-color: var(--black);
+        }
+
+        &.active {
+            background: var(--black);
+            border-color: var(--black);
+            color: var(--white);
+        }
+    }
+
+    @include res(md) {
+        gap: 8px;
+
+        .tf-btn-tab {
+            padding-left: 12px;
+            padding-right: 12px;
+            height: 36px;
+        }
+    }
+}
+
+.split-accordion-tabs-2 {
+    .accordion-item {
+        position: relative;
+        border-bottom: 1px solid var(--line-5);
+        @include transition3;
+
+        &:has(.accordion-action:not(.collapsed)) {
+            border-color: var(--black);
+        }
+    }
+
+    .accordion-action {
+        gap: 16px;
+        justify-content: start;
+
+    }
+
+    .accordion-content {
+        padding-bottom: 16px;
+    }
+
+    .number-order {
+        min-width: 40px;
+    }
+
+    @include res(lg, min) {
+        .accordion-content {
+            padding-bottom: 24px;
+
+            &.collapsed {
+                padding-bottom: 24px;
+            }
+        }
+    }
+
+    @include res(xl, min) {
+        .number-order {
+            min-width: 48px;
+        }
+
+        .accordion-action {
+            padding-top: 32px;
+
+            &.collapsed {
+                padding-bottom: 32px;
+            }
+        }
+
+        .accordion-content {
+            padding-bottom: 32px;
+        }
+    }
+}
+
+.list-tab-btn-3 {
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    gap: 40px;
+
+    .tf-btn-tab {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        text-decoration: underline;
+        white-space: nowrap;
+
+        .image {
+            border-radius: 999px;
+            border: 1px solid var(--line-5);
+            @include transition3;
+            position: relative;
+            min-width: 60px;
+
+            img {
+                border-radius: 999px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0px;
+                border-radius: 999px;
+                border: 2px solid var(--white);
+                z-index: 1;
+                @include transition3;
+                @include hidden;
+            }
+        }
+
+        &.active {
+
+            .image {
+                border-color: var(--black);
+
+                &::before {
+                    @include visible;
+                }
+            }
+        }
+
+        &:not(.active) {
+            text-decoration-color: transparent;
+        }
+    }
+
+    @include res(xl) {
+        gap: 24px;
+
+        .tf-btn-tab {
+            gap: 8px;
+        }
+    }
+}

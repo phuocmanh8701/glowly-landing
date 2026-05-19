@@ -1,0 +1,26 @@
+@use "../../abstracts/index"as *;
+
+
+.tf-topbar {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: relative;
+    z-index: 101;
+
+    .br-line {
+        &.fake-class {
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    @include res(xl, min) {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}
+
+.swiper-topbar {
+    height: 24px;
+}
