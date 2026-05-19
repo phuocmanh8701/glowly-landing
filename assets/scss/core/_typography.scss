@@ -245,65 +245,13 @@ h6,
 }
 
 /* Line height */
-.lh-8 {
-    line-height: 8px !important;
+
+@for $i from 1 through 32 {
+    .lh-#{$i} {
+        line-height: #{$i}px !important;
+    }
 }
 
-.lh-10 {
-    line-height: 10px !important;
-}
-
-.lh-11 {
-    line-height: 11px !important;
-}
-
-.lh-13 {
-    line-height: 13px !important;
-}
-
-.lh-14 {
-    line-height: 14px !important;
-}
-
-.lh-18 {
-    line-height: 18px !important;
-}
-
-.lh-19 {
-    line-height: 19px !important;
-}
-
-.lh-20 {
-    line-height: 20px !important;
-}
-
-.lh-22 {
-    line-height: 22px !important;
-}
-
-.lh-24 {
-    line-height: 24px !important;
-}
-
-.lh-25 {
-    line-height: 25px !important;
-}
-
-.lh-26 {
-    line-height: 26px !important;
-}
-
-.lh-28 {
-    line-height: 28px !important;
-}
-
-.lh-30 {
-    line-height: 30px !important;
-}
-
-.lh-32 {
-    line-height: 32px !important;
-}
 
 /* Letter spacing */
 .letter-space-05 {

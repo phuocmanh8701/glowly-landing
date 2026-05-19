@@ -515,68 +515,10 @@
     color: var(--text) !important;
 }
 
-.cl-text-2 {
-    color: var(--text-2) !important;
-}
-
-.cl-text-3 {
-    color: var(--text-3) !important;
-}
-
-.cl-text-3_48 {
-    color: var(--text-3_48) !important;
-}
-
-.cl-text-3_64 {
-    color: var(--text-3_64) !important;
-}
-
-.cl-text-4 {
-    color: var(--text-4) !important;
-}
-
-.cl-text-5 {
-    color: var(--text-5) !important;
-}
-
-.cl-text-6 {
-    color: var(--text-6) !important;
-}
-
-.cl-text-7 {
-    color: var(--text-7) !important;
-}
-
-.cl-text-8 {
-    color: var(--text-8) !important;
-}
-
-.cl-text-9 {
-    color: var(--text-9) !important;
-}
-
-.cl-text-10 {
-    color: var(--text-10) !important;
-}
-
-.cl-text-11 {
-    color: var(--text-11) !important;
-}
-
-.cl-text-12 {
-    color: var(--text-12) !important;
-}
-
-.cl-text-13 {
-    color: var(--text-13) !important;
-}
-
-.cl-text-14 {
-    color: var(--text-14) !important;
-}
-
-.cl-text-15 {
-    color: var(--text-15) !important;
+@for $i from 2 through 20 {
+    .cl-text-#{$i} {
+        color: var(--text-#{$i}) !important;
+    }
 }
 
 .cl-text-line {
