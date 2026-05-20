@@ -343,6 +343,11 @@
         padding-top: 60px;
         padding-bottom: 60px;
     }
+
+    @include res(ssm) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 }
 
 .flat-spacing-6 {
@@ -497,6 +502,10 @@
 
 .text-white-50 {
     color: var(--white-50);
+}
+
+.text-white_12 {
+    color: var(--white_12);
 }
 
 .text-white_20 {
@@ -839,6 +848,10 @@
 
 .bg-white_10 {
     background: var(--white-10) !important;
+}
+
+.bg-white_12 {
+    background: var(--white_12) !important;
 }
 
 .bg-cl-text {

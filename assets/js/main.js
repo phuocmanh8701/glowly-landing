@@ -2237,7 +2237,7 @@
     $(function () {
         headerSticky();
         // popupProductVariant();
-        // dropdownSelect();
+        dropdownSelect();
         // btnQuantity();
         // deleteFile();
         // deleteWishList();
