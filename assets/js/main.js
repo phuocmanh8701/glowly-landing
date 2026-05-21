@@ -322,80 +322,83 @@
     /* Header Sticky
     -------------------------------------------------------------------------*/
     var headerSticky = function () {
-        const customHeaderCategory = () => {
-            const header = document.querySelector(".tf-header");
-
-            if (!header || !header.classList.contains("has-by-category")) {
-                return null;
-            }
-
-            const headerBottom = header.querySelector(".header-bottom_wrap");
-            const btnOpen = header.querySelector(".btn-open-header-bottom");
-
-            if (!headerBottom || !btnOpen) return null;
-
-            btnOpen.addEventListener("click", () => {
-                headerBottom.classList.toggle("hide");
-            });
-
-            return {
-                hideHeaderBottom: () => headerBottom.classList.add("hide"),
-                showHeaderBottom: () => headerBottom.classList.remove("hide"),
-            };
-        };
-
-        const S3 = customHeaderCategory();
-
         let lastScrollTop = 0;
         let delta = 5;
         let navbarHeight = $("header").outerHeight();
         let didScroll = false;
 
+        const $header = $("header");
+        const headerOriginalOffset = $header.offset().top;
+
         $(window).scroll(function () {
             didScroll = true;
         });
 
+        function handleHeader() {
+            let st = $(window).scrollTop();
+            navbarHeight = $header.outerHeight();
+
+            const $stickyTop = $(".sticky-top, .sticky-lg-top, .sticky-md-top");
+
+            // hide section
+            const $hideSection = $(".scroll-hide-head");
+            let isInHideSection = false;
+
+            $hideSection.each(function () {
+                const offsetTop = $(this).offset().top;
+                const offsetBottom = offsetTop + $(this).outerHeight();
+                if (st + navbarHeight > offsetTop && st < offsetBottom) {
+                    isInHideSection = true;
+                    return false;
+                }
+            });
+
+            if (isInHideSection) {
+                $header.css("top", `-${navbarHeight}px`);
+                $stickyTop.css("top", "15px");
+                return;
+            }
+
+            const specialHeaders = [
+                "tf-header-landing",
+            ];
+            const isSpecialHeader = specialHeaders.some((cls) =>
+                $header.hasClass(cls)
+            );
+
+            if (isSpecialHeader) {
+                if (st > headerOriginalOffset) {
+                    $header.addClass("header-fixed").css("top", "12px");
+                    $stickyTop.css("top", `${15 + navbarHeight}px`);
+                } else {
+                    $header.removeClass("header-fixed")
+                        .css("top", `-${navbarHeight}px`);
+                    $stickyTop.css("top", "15px");
+                }
+                return;
+            }
+
+            if (st > navbarHeight) {
+                if (st > lastScrollTop + delta) {
+                    $header.css("top", `-${navbarHeight}px`);
+                    $stickyTop.css("top", "15px");
+                } else if (st < lastScrollTop - delta) {
+                    $header.css("top", "0").addClass("header-sticky");
+                    $stickyTop.css("top", `${15 + navbarHeight}px`);
+                }
+            } else {
+                $header.css("top", "unset").removeClass("header-sticky");
+                $stickyTop.css("top", "15px");
+            }
+
+            lastScrollTop = st;
+        }
+
+        handleHeader();
+
         setInterval(function () {
             if (didScroll) {
-                let st = $(window).scrollTop();
-                navbarHeight = $("header").outerHeight();
-
-                if (st > navbarHeight) {
-
-                    if (st > lastScrollTop + delta) {
-
-                        $("header").css("top", `-${navbarHeight}px`);
-                        $(".sticky-top").css("top", "15px");
-                        $(".sticky-top.no-offset").css("top", "0");
-
-                        if (S3) S3.hideHeaderBottom();
-
-                    } else if (st < lastScrollTop - delta) {
-
-                        if ($("header").hasClass("offset-top")) {
-                            $("header").css("top", "15px");
-                        } else {
-                            $("header").css("top", "0");
-                        }
-
-                        $("header").addClass("header-sticky");
-                        $(".sticky-top").css("top", `${30 + navbarHeight}px`);
-                        $(".sticky-top.no-offset").css("top", `${0 + navbarHeight}px`);
-
-
-                    }
-
-                } else {
-
-                    $("header").css("top", "unset");
-                    $("header").removeClass("header-sticky");
-                    $(".sticky-top").css("top", "15px");
-                    $(".sticky-top.no-offset").css("top", "0");
-
-                    if (S3) S3.showHeaderBottom();
-                }
-
-                lastScrollTop = st;
+                handleHeader();
                 didScroll = false;
             }
         }, 250);
