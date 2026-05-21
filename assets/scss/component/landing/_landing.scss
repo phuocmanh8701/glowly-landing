@@ -564,9 +564,22 @@
 }
 
 .demo-card {
-    padding: 12px;
-    background: var(--white);
-    border-radius: 12px;
+
+    position: relative;
+    z-index: 1;
+
+    .main-card {
+        padding: 12px;
+        background: var(--white);
+        border-radius: 12px;
+        box-shadow: 0px 24px 24px -12px var(--elevationshadow),
+            0px 3px 3px -1.5px var(--elevationshadow),
+            0px 1px 1px -0.5px var(--elevationshadow);
+        @include transition3;
+        border: 1px solid #E5E5E5;
+        position: relative;
+        z-index: 1;
+    }
 
     .card-image {
         margin-bottom: 12px;
@@ -588,8 +601,59 @@
         flex-wrap: wrap;
     }
 
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: calc(66/558*100%);
+        background: linear-gradient(91.95deg, #FFA11F 0%, #D24625 100%);
+        border-radius: 12px;
+        z-index: 0;
+        @include transition3;
+        @include hidden;
+    }
+
+    .wrap {
+        width: 48px;
+        height: 26px;
+        border-radius: 99px;
+        @include flex(center, center);
+        background: linear-gradient(91.95deg, #FFA11F 0%, #D24625 100%);
+        color: var(--white);
+        @include transition3;
+        @include hidden;
+    }
+
+    &:hover {
+        .main-card {
+            transform: translateY(-8px);
+            background: var(--black);
+            border-color: var(--black);
+        }
+
+        .card-link {
+            color: var(--white);
+        }
+
+        .wrap {
+            @include visible;
+        }
+
+        &::before {
+            @include visible;
+        }
+    }
+
+    &.coming {
+        pointer-events: none;
+    }
+
     @include res(xl, min) {
-        padding-bottom: 24px;
+        .main-card {
+            padding-bottom: 24px;
+        }
 
         .card-image {
             margin-bottom: 24px;
@@ -604,6 +668,10 @@
             .text {
                 width: 100%;
             }
+        }
+
+        .wrap {
+            @include visible;
         }
     }
 }
@@ -632,15 +700,22 @@
 }
 
 .section-inner-page {
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    // overflow: hidden;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // min-height: 100vh;
 
     .content {
         position: relative;
         z-index: 1;
+
+        // position: absolute;
+        // inset: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .wrap-inner-list {

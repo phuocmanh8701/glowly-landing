@@ -617,12 +617,11 @@
     .inner-underline {
         @include transition3;
         text-decoration: underline;
-        text-decoration-color: transparent;
     }
 
-    &:hover {
+    &:not(:hover) {
         .inner-underline {
-            text-decoration-color: var(--black);
+            text-decoration-color: transparent;
         }
     }
 }

@@ -140,7 +140,7 @@
             const lists = gsap.utils.toArray(".wrap-inner-list");
             ScrollTrigger.create({
                 trigger: section,
-                start: "top top",
+                start: "center center",
                 end: "+=2000",
                 pin: true,
                 scrub: true,
@@ -171,9 +171,10 @@
                         ease: "none",
                         scrollTrigger: {
                             trigger: section,
-                            start: "top top",
+                            start: "center center",
                             end: "+=2000",
                             scrub,
+                            // markers: true,
                         },
                     });
                 });
