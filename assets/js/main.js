@@ -2229,60 +2229,20 @@
         setTimeout(function () {
             $("#preload").fadeOut(300, function () {
                 $(this).remove();
+                // new WOW().init();
             });
-        }, 300);
+        }, 200);
     }
 
     // Dom Ready
     $(function () {
         headerSticky();
-        // popupProductVariant();
         dropdownSelect();
-        // btnQuantity();
-        // deleteFile();
-        // deleteWishList();
         goTop();
-        // variantPicker();
-        // sidebarMobile();
-        // staggerWrap();
-        // totalPriceVariant();
-        // handleProgress();
         handleFooter();
         infiniteSlide();
-        // addWishList();
-        // handleSidebarFilter();
-        // estimateShipping();
-        // unitEstimateShipping();
-        // textCopy();
         parallaxie();
-        // tableCompareRemove();
-        // handleMobileMenu();
-        // swatchProduct();
-        // scrollBottomSticky();
-        // showPassword();
-        // hoverPin();
-        // rateClick();
         counter();
-        // updateBundleTotal();
-        // noticePop();
-        // hoverMenuOverlay();
-        // brandFilter();
-        // scrollX();
-        // submitFormGift();
-        // reactBtn();
-        // checkFbt();
-        // initStepRoutine();
-        // activeActionBox();
-        // hoverImgCursor();
-        // autoPopup();
-        // openedDrop();
-        // doubleTab();
-        // guideDirecTab();
-        // glitchCanvas();
-        // handleUploadImage();
-        // autoTabAccordion();
-        // formatMMYY();
-        // hoverVideo();
 
         if (document.readyState === "loading") {
             document.addEventListener("DOMContentLoaded", function () {
@@ -2290,6 +2250,7 @@
             });
         } else {
             preloader();
+            new WOW().init();
         }
     });
 })(jQuery);
