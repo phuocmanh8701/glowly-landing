@@ -22468,9 +22468,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     * Components
  ------------------------------------------------------------------------------ */
 /*--------- Abstracts variable ---------- */
-.body-landing::-webkit-scrollbar {
-  width: 0px;
-}
 .body-landing .canvas-mb {
   width: 320px !important;
 }
@@ -22635,7 +22632,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   gap: 12px;
   padding: 8px 16px;
   border-radius: 99px;
-  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1019607843), 0px 0px 2px 0px rgba(0, 0, 0, 0.1019607843), inset 0px 0px 16px 0px #F2F2F2, inset 0px 0px 1px 1px #999999, inset 0px 0px 3px 1px rgba(255, 255, 255, 0.1490196078), inset -1px -1px 1px -0.5px rgba(255, 255, 255, 0.7490196078), inset 1px 1px 1px -0.5px rgba(255, 255, 255, 0.7490196078), inset 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.8), inset 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.7490196078);
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.1019607843), 0px 0px 2px 0px rgba(0, 0, 0, 0.1019607843), inset 0px 0px 16px 0px rgba(0, 0, 0, 0.1019607843), inset 0px 0px 1px 1px rgba(0, 0, 0, 0.1019607843), inset 0px 0px 3px 1px rgba(0, 0, 0, 0.1019607843), inset -1px -1px 1px -0.5px rgba(255, 255, 255, 0.7490196078), inset 1px 1px 1px -0.5px rgba(255, 255, 255, 0.7490196078), inset 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.8), inset 3px 3px 0.5px -3.5px rgba(255, 255, 255, 0.7490196078);
   position: relative;
 }
 .hero-landing .hero-content .badge::after {

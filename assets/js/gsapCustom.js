@@ -135,52 +135,99 @@
     /* Scroll Inner
     -------------------------------------------------------------------------*/
     var scrollInner = () => {
-        const section = document.querySelector(".section-inner-page");
-        if (section) {
-            const lists = gsap.utils.toArray(".wrap-inner-list");
+
+        const init = () => {
+
+            const section = document.querySelector(".section-inner-page");
+
+            if (!section) return;
+
+            ScrollTrigger.getAll().forEach((st) => {
+
+                if (st.vars.trigger === section) {
+                    st.kill();
+                }
+
+            });
+
+            gsap.killTweensOf(
+                section.querySelectorAll(".image-inner")
+            );
+
+            const lists = gsap.utils.toArray(
+                section.querySelectorAll(".wrap-inner-list")
+            );
+
             ScrollTrigger.create({
                 trigger: section,
                 start: "center center",
                 end: "+=2000",
                 pin: true,
                 scrub: true,
+                invalidateOnRefresh: true,
             });
+
             lists.forEach((list) => {
+
                 const items = gsap.utils.toArray(
                     list.querySelectorAll(".image-inner")
                 );
+
                 const total = items.length;
+
                 items.forEach((item, index) => {
+
                     const progress = index / (total - 1);
-                    let moveY;
-                    let scrub;
-                    if (progress < 0.25) {
-                        moveY = gsap.utils.random(1500, 2000);
-                        scrub = 1;
+
+                    let moveY = gsap.utils.random(1500, 2000);
+
+                    if (progress > 0.7) {
+                        moveY *= 1.2;
                     }
-                    else if (progress < 0.7) {
-                        moveY = gsap.utils.random(1500, 2000);
-                        scrub = 1;
-                    }
-                    else {
-                        moveY = gsap.utils.random(1500, 2000);
-                        scrub = 1;
-                    }
+
                     gsap.to(item, {
+
                         y: -moveY,
                         ease: "none",
+                        force3D: true,
+
                         scrollTrigger: {
                             trigger: section,
                             start: "center center",
                             end: "+=2000",
-                            scrub,
-                            // markers: true,
+                            scrub: 1,
+                            invalidateOnRefresh: true,
                         },
+
                     });
+
                 });
+
             });
-        }
-    }
+
+            ScrollTrigger.refresh();
+
+        };
+
+        init();
+
+        let resizeTimer;
+
+        window.addEventListener("resize", () => {
+
+            clearTimeout(resizeTimer);
+
+            resizeTimer = setTimeout(() => {
+
+                init();
+
+            }, 200);
+
+        });
+
+    };
+
+
     document.addEventListener("DOMContentLoaded", function () {
         changetext();
         scrollSmooth();

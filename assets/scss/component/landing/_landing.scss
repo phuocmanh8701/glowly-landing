@@ -6,9 +6,9 @@
     // letter-spacing: -3%;
     // background: var(--bg-2);
 
-    &::-webkit-scrollbar {
-        width: 0px;
-    }
+    // &::-webkit-scrollbar {
+    //     width: 0px;
+    // }
 
     .canvas-mb {
         width: 320px !important;
@@ -192,9 +192,9 @@
             box-shadow:
                 0px 1px 8px 0px #0000001A,
                 0px 0px 2px 0px #0000001A,
-                inset 0px 0px 16px 0px #F2F2F2,
-                inset 0px 0px 1px 1px #999999,
-                inset 0px 0px 3px 1px #FFFFFF26,
+                inset 0px 0px 16px 0px #0000001A,
+                inset 0px 0px 1px 1px #0000001A,
+                inset 0px 0px 3px 1px #0000001A,
                 inset -1px -1px 1px -0.5px #FFFFFFBF,
                 inset 1px 1px 1px -0.5px #FFFFFFBF,
                 inset 3px 3px 0.5px -3.5px #FFFFFFCC,
