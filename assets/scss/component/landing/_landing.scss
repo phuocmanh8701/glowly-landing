@@ -158,7 +158,7 @@
 }
 
 .hero-landing {
-    padding-top: 160px;
+    padding-top: 130px;
     position: relative;
 
     .hero-image {
@@ -342,6 +342,7 @@
     }
 
     @include res(xl, min) {
+        padding-top: 160px;
         .badge,
         .title,
         .group-btn {
@@ -428,10 +429,8 @@
 .hero-landing {
     position: relative;
     min-height: 100vh;
-    padding-top: 160px;
     padding-bottom: 0;
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
 }
@@ -448,6 +447,17 @@
     margin-top: auto;
     margin-bottom: 0;
     flex-shrink: 0;
+}
+
+.hero-pin-wrap {
+    position: relative;
+    height: 140vh;
+}
+
+
+.section-design-testimonial {
+    background: var(--bg-2);
+    position: relative;
 }
 
 .eyebrow-label-v2 {
@@ -727,9 +737,9 @@
     }
 
     @include res(xxl, min) {
-        border-radius: 12px;
-        margin-left: 24px;
-        margin-right: 24px;
+        // border-radius: 12px;
+        // margin-left: 24px;
+        // margin-right: 24px;
     }
 }
 .bg-trust {

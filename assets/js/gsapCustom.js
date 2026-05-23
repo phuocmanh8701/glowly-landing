@@ -227,10 +227,33 @@
 
     };
 
+    var handleHeroPinOnSection = function () {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            return;
+        }
+    
+        gsap.registerPlugin(ScrollTrigger);
+    
+        var hero = document.querySelector('.hero-landing');
+        var targetSection = document.querySelector('.section-design-testimonial');
+    
+        if (!hero || !targetSection) return;
+    
+        ScrollTrigger.create({
+            trigger: targetSection,
+            start: 'top bottom',
+            end: 'bottom top',
+            pin: hero,
+            pinSpacing: false,
+            anticipatePin: 1,
+            invalidateOnRefresh: true
+        });
+    };
 
     document.addEventListener("DOMContentLoaded", function () {
         changetext();
         scrollSmooth();
         scrollInner();
+        handleHeroPinOnSection();
     });
 })(jQuery);

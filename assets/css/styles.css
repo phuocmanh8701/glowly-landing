@@ -3082,6 +3082,7 @@ header.header-v5:not(.header-sticky) {
 .header-v4 .header-inner {
   background: var(--white);
   border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .header-v4:not(.hd-v4_s2).header-sticky {
   box-shadow: unset;
@@ -22540,7 +22541,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .hero-landing {
-  padding-top: 160px;
+  padding-top: 130px;
   position: relative;
 }
 .hero-landing .hero-image {
@@ -22693,6 +22694,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   }
 }
 @media (min-width: 1200px) {
+  .hero-landing {
+    padding-top: 160px;
+  }
   .hero-landing .badge,
   .hero-landing .title,
   .hero-landing .group-btn {
@@ -22762,7 +22766,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .hero-landing {
   position: relative;
   min-height: 100vh;
-  padding-top: 160px;
   padding-bottom: 0;
   overflow: hidden;
   display: flex;
@@ -22781,6 +22784,16 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   margin-top: auto;
   margin-bottom: 0;
   flex-shrink: 0;
+}
+
+.hero-pin-wrap {
+  position: relative;
+  height: 140vh;
+}
+
+.section-design-testimonial {
+  background: var(--bg-2);
+  position: relative;
 }
 
 .eyebrow-label-v2 {
@@ -23046,14 +23059,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     gap: 16px;
   }
 }
-@media (min-width: 1440px) {
-  .section-demo-page {
-    border-radius: 12px;
-    margin-left: 24px;
-    margin-right: 24px;
-  }
-}
-
 .bg-trust {
   top: 11%;
 }
