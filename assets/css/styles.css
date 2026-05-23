@@ -22741,18 +22741,22 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   .hero-landing .benefit-item.benefit-1 {
     top: 12%;
     left: 5%;
+    animation: ani-left-right 2s linear infinite alternate;
   }
   .hero-landing .benefit-item.benefit-2 {
     top: 40%;
     left: 10%;
+    animation: ani-up-down 2s linear infinite alternate;
   }
   .hero-landing .benefit-item.benefit-3 {
     top: 12%;
     right: 5%;
+    animation: ani-up-down 2s linear infinite alternate;
   }
   .hero-landing .benefit-item.benefit-4 {
     top: 40%;
     right: 10%;
+    animation: ani-left-right 2s linear infinite alternate;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -22967,7 +22971,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   align-items: center;
   flex-wrap: wrap;
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .demo-card::before {
     content: "";
     position: absolute;
@@ -23016,7 +23020,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   opacity: 1;
   visibility: visible;
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .demo-card:hover::before {
     opacity: 1;
     visibility: visible;
@@ -23548,7 +23552,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   overflow: hidden;
 }
 .perform-card .infiniteSlide-demo .image-demo img {
-  aspect-ratio: 0.9282511211;
+  aspect-ratio: 0.8108108108;
   object-fit: cover;
   object-position: top;
 }
@@ -24158,6 +24162,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   }
 }
 @media (min-width: 992px) {
+  .banner-advanced .advanced-item.pst-1 .inner {
+    animation: ani-left-right 2s linear infinite alternate;
+  }
   .banner-advanced .advanced-item.pst-2 {
     top: 8.4848484848%;
     left: 42.7777777778%;
@@ -24166,6 +24173,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     position: absolute;
     right: -72px;
     bottom: 12px;
+  }
+  .banner-advanced .advanced-item.pst-2 .inner {
+    animation: ani-up-down 3s linear infinite alternate;
   }
   .banner-advanced .advanced-item.pst-3 {
     top: 19.3939393939%;
@@ -24192,6 +24202,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     right: -65px;
     bottom: 16px;
   }
+  .banner-advanced .advanced-item.pst-4 .inner {
+    animation: ani-left-right 3s linear infinite alternate;
+  }
   .banner-advanced .advanced-item.pst-5 {
     bottom: 8.4848484848%;
     right: 19.375%;
@@ -24200,6 +24213,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     position: absolute;
     right: -61px;
     bottom: 19px;
+  }
+  .banner-advanced .advanced-item.pst-5 .inner {
+    animation: ani-left-right 2s linear infinite alternate;
   }
 }
 @media (max-width: 991px) {
@@ -24246,6 +24262,35 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   }
   .banner-advanced .banner-image {
     display: none;
+  }
+}
+
+.move-1 {
+  animation: ani-left-right 2s linear infinite alternate;
+}
+
+.move-2 {
+  animation: ani-up-down 2s linear infinite alternate;
+}
+
+.move-3 {
+  animation: ani-up-down 3s linear infinite alternate;
+}
+
+@keyframes ani-left-right {
+  0% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(-8px);
+  }
+}
+@keyframes ani-up-down {
+  0% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-8px);
   }
 }
 

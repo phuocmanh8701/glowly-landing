@@ -398,21 +398,25 @@
             &.benefit-1 {
                 top: 12%;
                 left: 5%;
+                animation: ani-left-right 2s linear infinite alternate;
             }
 
             &.benefit-2 {
                 top: 40%;
                 left: 10%;
+                animation: ani-up-down 2s linear infinite alternate;
             }
 
             &.benefit-3 {
                 top: 12%;
                 right: 5%;
+                animation: ani-up-down 2s linear infinite alternate;
             }
 
             &.benefit-4 {
                 top: 40%;
                 right: 10%;
+                animation: ani-left-right 2s linear infinite alternate;
             }
         }
     }
@@ -453,7 +457,6 @@
     position: relative;
     height: 140vh;
 }
-
 
 .section-design-testimonial {
     background: var(--bg-2);
@@ -641,7 +644,7 @@
         flex-wrap: wrap;
     }
 
-    @include res(md, min) {
+    @include res(xl, min) {
         &::before {
             content: "";
             position: absolute;
@@ -683,7 +686,7 @@
             @include visible;
         }
     }
-    @include res(md, min) {
+    @include res(xl, min) {
         &:hover {
             &::before {
                 @include visible;
@@ -1229,7 +1232,7 @@
             overflow: hidden;
 
             img {
-                aspect-ratio: calc(414 / 446);
+                aspect-ratio: calc(360 / 444);
                 object-fit: cover;
                 object-position: top;
             }
@@ -1916,6 +1919,9 @@
                 @include res(xl, min) {
                     left: calc(163 / 1440 * 100%);
                 }
+                .inner{
+                    animation: ani-left-right 2s linear infinite alternate;
+                }
             }
 
             &.pst-2 {
@@ -1926,6 +1932,9 @@
                     position: absolute;
                     right: -72px;
                     bottom: 12px;
+                }
+                .inner{
+                    animation: ani-up-down 3s linear infinite alternate;
                 }
             }
 
@@ -1939,7 +1948,9 @@
                     bottom: -29px;
                     width: max-content;
                 }
-
+                .inner{
+                    // animation: ani-up-down 2s linear infinite alternate;
+                }
                 @include res(xl, min) {
                     right: calc(137 / 1440 * 100%);
                 }
@@ -1954,6 +1965,9 @@
                     right: -65px;
                     bottom: 16px;
                 }
+                .inner{
+                    animation: ani-left-right 3s linear infinite alternate;
+                }
             }
 
             &.pst-5 {
@@ -1964,6 +1978,9 @@
                     position: absolute;
                     right: -61px;
                     bottom: 19px;
+                }
+                .inner{
+                    animation: ani-left-right 2s linear infinite alternate;
                 }
             }
         }
@@ -2025,5 +2042,31 @@
         .banner-image {
             display: none;
         }
+    }
+}
+
+.move-1 {
+    animation: ani-left-right 2s linear infinite alternate;
+}
+.move-2 {
+    animation: ani-up-down 2s linear infinite alternate;
+}
+.move-3 {
+    animation: ani-up-down 3s linear infinite alternate;
+}
+@keyframes ani-left-right {
+    0% {
+        transform: translateX(8px);
+    }
+    100% {
+        transform: translateX(-8px);
+    }
+}
+@keyframes ani-up-down {
+    0% {
+        transform: translateY(8px);
+    }
+    100% {
+        transform: translateY(-8px);
     }
 }
