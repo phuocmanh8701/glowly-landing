@@ -2239,7 +2239,7 @@
 
     // Dom Ready
     $(function () {
-        headerSticky();
+        // headerSticky();
         dropdownSelect();
         goTop();
         handleFooter();
