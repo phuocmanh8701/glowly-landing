@@ -3136,6 +3136,52 @@
     animation-name: fadeInUpBlur;
 }
 
+@keyframes fadeInRightBlur {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        transform: translateX(20px);
+        filter: blur(16px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+        filter: blur(0px);
+    }
+}
+
+.fadeInRightBlur {
+    -webkit-animation-name: fadeInRightBlur;
+    animation-name: fadeInRightBlur;
+}
+
+@keyframes fadeInLeftBlur {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+        transform: translateX(-20px);
+        filter: blur(16px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+        filter: blur(0px);
+    }
+}
+
+.fadeInLeftBlur {
+    -webkit-animation-name: fadeInLeftBlur;
+    animation-name: fadeInLeftBlur;
+}
+
 @-webkit-keyframes fadeZoom {
     0% {
         opacity: 0;
@@ -3173,6 +3219,28 @@
     animation-name: fadeZoomBlur;
 }
 
+@keyframes fadeZoomBlur2 {
+    0% {
+        filter: blur(16px);
+        opacity: 0;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.fadeZoomBlur2 {
+    -webkit-animation-name: fadeZoomBlur2;
+    animation-name: fadeZoomBlur2;
+}
 
 @keyframes fadeBlur {
     0% {
@@ -3187,4 +3255,52 @@
 .fadeBlur {
     -webkit-animation-name: fadeBlur;
     animation-name: fadeBlur;
+}
+
+/* 
+@keyframes clipLeftRight {
+    0% {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.clipLeftRight {
+    -webkit-animation-name: clipLeftRight;
+    animation-name: clipLeftRight;
+} */
+
+@keyframes clipTop {
+    0% {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.clipTop {
+    -webkit-animation-name: clipTop;
+    animation-name: clipTop;
+}
+
+@keyframes fadeInBlur {
+    0% {
+        opacity: 0;
+        filter: blur(16px);
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.fadeInBlur {
+    -webkit-animation-name: fadeInBlur;
+    animation-name: fadeInBlur;
 }

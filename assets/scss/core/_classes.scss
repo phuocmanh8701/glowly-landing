@@ -1165,6 +1165,10 @@
     .me-xxl-1 {
         margin-right: 1px !important;
     }
+
+    .gap-xxl-48 {
+        gap: 48px !important;
+    }
 }
 
 @include res(xxxl, min) {
