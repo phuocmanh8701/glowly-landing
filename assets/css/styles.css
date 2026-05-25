@@ -272,7 +272,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 body::-webkit-scrollbar {
-  width: 0px;
+  width: 3px;
 }
 body::-webkit-scrollbar-thumb {
   cursor: grab;
