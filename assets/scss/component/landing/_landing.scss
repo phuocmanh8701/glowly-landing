@@ -463,6 +463,15 @@
 .section-design-testimonial {
     background: var(--bg-2);
     position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.banner-build {
+    height: 90vh;
+    display: flex;
+    align-items: center;
 }
 
 .eyebrow-label-v2 {
