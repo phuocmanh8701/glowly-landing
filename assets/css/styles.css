@@ -22651,6 +22651,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   max-width: 360px;
   border-radius: 6px;
   overflow: hidden;
+  border: 1px solid var(--white_12);
 }
 .hero-landing .infiniteSlide-demo .image-demo img {
   aspect-ratio: 0.8108108108;
@@ -22801,9 +22802,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .section-design-testimonial {
   background: var(--bg-2);
   position: relative;
-  height: 80vh;
-  display: flex;
-  align-items: center;
 }
 
 .banner-build {
@@ -23192,6 +23190,40 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   align-items: center;
   justify-content: center;
 }
+.land-feature-v01.style-v3.type-2 .fea-drawer {
+  aspect-ratio: 0.81640625;
+  max-width: 209px;
+  width: 100%;
+}
+.land-feature-v01.style-v3.type-2 .image {
+  width: 100%;
+}
+.land-feature-v01.style-v3.type-2 .draw-wrap {
+  width: 128px;
+  display: grid;
+  margin-left: auto;
+  margin-top: 32px;
+  box-shadow: 0px 48px 48px -24px rgba(0, 0, 0, 0.0784313725), 0px 6px 6px -3px rgba(0, 0, 0, 0.0392156863), 0px 2px 2px -1px rgba(0, 0, 0, 0.0392156863);
+}
+.land-feature-v01.style-v3.type-2 .draw-wrap .ic-w {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px 16px 0px 0px;
+  border: 1px solid var(--main_200);
+}
+.land-feature-v01.style-v3.type-2 .draw-wrap .ic-w .icon {
+  font-size: 64px;
+}
+.land-feature-v01.style-v3.type-2 .draw-wrap .price {
+  border-radius: 0px 0px 16px 16px;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 49px;
+}
 .land-feature-v01.style-v4 .feature-image {
   flex: 1;
   display: flex;
@@ -23350,6 +23382,11 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   top: 60.4651162791%;
   right: 10.6024096386%;
   left: 56.9879518072%;
+}
+.land-feature-v01 .fea-item.item-19 {
+  bottom: 6%;
+  left: 7%;
+  right: -6%;
 }
 @media (max-width: 991px) {
   .land-feature-v01 .feature-content {
@@ -23642,7 +23679,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .perform-card {
   position: relative;
-  border-radius: 12px;
   overflow: hidden;
 }
 .perform-card .card-img-bg {
@@ -23696,6 +23732,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .perform-card .infiniteSlide-demo .image-demo {
   border-radius: 6px;
   overflow: hidden;
+  border: 1px solid var(--white_12);
 }
 .perform-card .infiniteSlide-demo .image-demo img {
   aspect-ratio: 0.8108108108;
@@ -23715,7 +23752,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .perform-card-v2 {
   position: relative;
-  border-radius: 12px;
   overflow: hidden;
   padding: 20px;
   display: flex;
@@ -23759,7 +23795,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .perform-card-v3 {
   background: var(--black);
   padding: 20px;
-  border-radius: 12px;
 }
 .perform-card-v3 .card-badge {
   padding: 4px 11px;

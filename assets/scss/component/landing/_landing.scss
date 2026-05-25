@@ -293,6 +293,7 @@
             max-width: 360px;
             border-radius: 6px;
             overflow: hidden;
+            border: 1px solid var(--white_12);
 
             img {
                 aspect-ratio: calc(360 / 444);
@@ -463,9 +464,9 @@
 .section-design-testimonial {
     background: var(--bg-2);
     position: relative;
-    height: 80vh;
-    display: flex;
-    align-items: center;
+    // height: 80vh;
+    // display: flex;
+    // align-items: center;
 }
 
 .banner-build {
@@ -919,6 +920,46 @@
             align-items: center;
             justify-content: center;
         }
+
+        &.type-2 {
+            .fea-drawer {
+                aspect-ratio: calc(209/256);
+                max-width: 209px;
+                width: 100%;
+            }
+
+            .image {
+                width: 100%;
+            }
+
+            .draw-wrap {
+                width: 128px;
+                display: grid;
+                margin-left: auto;
+                margin-top: 32px;
+                box-shadow: 0px 48px 48px -24px #00000014,
+                    0px 6px 6px -3px #0000000A,
+                    0px 2px 2px -1px #0000000A;
+
+                .ic-w {
+                    aspect-ratio: 1;
+                    @include flex(center, center);
+                    border-radius: 16px 16px 0px 0px;
+                    border: 1px solid var(--main_200);
+
+                    .icon {
+                        font-size: 64px;
+                    }
+                }
+
+                .price {
+                    border-radius: 0px 0px 16px 16px;
+                    background: var(--black);
+                    @include flex(center, center);
+                    height: 49px;
+                }
+            }
+        }
     }
 
     &.style-v4 {
@@ -1116,6 +1157,12 @@
             top: calc(208/344 * 100%);
             right: calc(88/830 * 100%);
             left: calc(473/830 * 100%);
+        }
+
+        &.item-19 {
+            bottom: 6%;
+            left: 7%;
+            right: -6%;
         }
     }
 
@@ -1352,7 +1399,7 @@
 
 .perform-card {
     position: relative;
-    border-radius: 12px;
+    // border-radius: 12px;
     overflow: hidden;
 
     .card-img-bg {
@@ -1413,6 +1460,7 @@
         .image-demo {
             border-radius: 6px;
             overflow: hidden;
+            border: 1px solid var(--white_12);
 
             img {
                 aspect-ratio: calc(360 / 444);
@@ -1433,7 +1481,7 @@
 
 .perform-card-v2 {
     position: relative;
-    border-radius: 12px;
+    // border-radius: 12px;
     overflow: hidden;
     padding: 20px;
     display: flex;
@@ -1483,7 +1531,7 @@
 .perform-card-v3 {
     background: var(--black);
     padding: 20px;
-    border-radius: 12px;
+    // border-radius: 12px;
 
     .card-badge {
         padding: 4px 11px;
